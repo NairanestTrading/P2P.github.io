@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nairanest Trading | Start P2P Trading</title>
+  <meta name="description" content="Learn how to start P2P crypto trading safely with Nairanest Trading. Beginner-friendly guide, safety tips, and direct access to get started." />
+  <style>
+    :root {
+      --bg: #081120;
+      --bg2: #0d1930;
+      --card: rgba(16, 26, 47, 0.94);
+      --text: #eef4ff;
+      --muted: #b5c1da;
+      --line: #243553;
+      --primary: #2dd4bf;
+      --secondary: #60a5fa;
+      --accent: #22c55e;
+      --shadow: 0 16px 40px rgba(0,0,0,.28);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(96,165,250,.14), transparent 22%),
+        radial-gradient(circle at top left, rgba(45,212,191,.12), transparent 20%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 20px 64px;
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .brand img {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: #0b1324;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .brand-name {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .nav-btn {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--line);
+      background: rgba(18, 31, 56, 0.82);
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 20px;
+      align-items: stretch;
+      margin-bottom: 20px;
+    }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+    .hero-copy {
+      padding: 34px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.05;
+    }
+    .lead {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 700px;
+    }
+    .hero-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin: 22px 0;
+    }
+    .mini {
+      border: 1px solid var(--line);
+      background: rgba(10, 18, 33, 0.55);
+      border-radius: 16px;
+      padding: 14px;
+      font-size: 14px;
+    }
+    .mini strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-size: 15px;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      transition: transform .15s ease, opacity .15s ease;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: .96;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      color: #062315;
+      border-color: transparent;
+    }
+    .btn-secondary {
+      background: rgba(17, 29, 53, 0.88);
+      color: var(--text);
+    }
+    .hero-card {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-card img {
+      width: 100%;
+      max-width: 260px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 24px;
+      margin: 0 auto 18px;
+      border: 1px solid var(--line);
+      background: #0b1324;
+      box-shadow: var(--shadow);
+    }
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+      margin-top: 12px;
+      background: rgba(9, 17, 30, 0.55);
+    }
+    .stat strong {
+      display: block;
+      font-size: 14px;
+      color: var(--secondary);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+    }
+    .section {
+      margin-top: 20px;
+      padding: 30px;
+    }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 30px;
+    }
+    .sub {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      background: rgba(10, 18, 33, 0.54);
+      border-radius: 18px;
+      padding: 20px;
+    }
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+    p {
+      margin: 0 0 12px;
+    }
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    li {
+      margin: 8px 0;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+    }
+    .step-number {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      background: rgba(45,212,191,.14);
+      color: var(--primary);
+      border: 1px solid var(--line);
+      margin-bottom: 14px;
+    }
+    .cta {
+      text-align: center;
+    }
+    .cta p {
+      max-width: 720px;
+      margin: 0 auto 16px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 22px;
+    }
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero-list, .steps, .grid {
+        grid-template-columns: 1fr;
+      }
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <a class="brand" href="#">
+        <img src="nairanest-logo.png" alt="Nairanest Trading logo" />
+        <div class="brand-text">
+          <span class="eyebrow">Trusted P2P Guide</span>
+          <span class="brand-name">Nairanest Trading</span>
+        </div>
+      </a>
+      <a class="nav-btn" href="https://t.me/NairanestTrading" target="_blank" rel="noopener noreferrer">Join Telegram</a>
+    </div>
+
+    <section class="hero">
+      <div class="panel hero-copy">
+        <div class="eyebrow">Beginner-friendly crypto guide</div>
+        <h1>Start P2P Trading Safely and Confidently</h1>
+        <p class="lead">
+          Learn how peer-to-peer crypto trading works, how to protect yourself from common mistakes,
+          and how to take your first steps with a clear plan. This page is built for beginners who
+          want a simple, practical starting point.
+        </p>
+
+        <div class="hero-list">
+          <div class="mini">
+            <strong>Simple to understand</strong>
+            A clear guide without confusing jargon.
+          </div>
+          <div class="mini">
+            <strong>Safety first</strong>
+            Avoid risky habits that cause losses.
+          </div>
+          <div class="mini">
+            <strong>Built for action</strong>
+            Start with the referral link when you are ready.
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="https://noones.com/r/Naianest_Trading" target="_blank" rel="noopener noreferrer">Start P2P Trading Now</a>
+          <a class="btn btn-secondary" href="#guide">Read Beginner Guide</a>
+        </div>
+      </div>
+
+      <div class="panel hero-card">
+        <img src="nairanest-logo.png" alt="Nairanest Trading brand logo" />
+        <div class="stat">
+          <strong>Who this is for</strong>
+          Beginners who want to learn P2P trading the right way before risking bigger amounts.
+        </div>
+        <div class="stat">
+          <strong>Main focus</strong>
+          Simplicity, safety, discipline, and a step-by-step starting process.
+        </div>
+        <div class="stat">
+          <strong>Next step</strong>
+          Read the guide below, then use the referral link to open your account.
+        </div>
+      </div>
+    </section>
+
+    <section class="panel section" id="guide">
+      <h2>What is P2P trading?</h2>
+      <p class="sub">
+        P2P means peer-to-peer. Instead of buying or selling crypto through a traditional exchange order book,
+        you trade directly with another person using an agreed payment method and price.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>How it works</h3>
+          <ul>
+            <li>You choose an offer or create one.</li>
+            <li>You send or receive payment using an approved payment method.</li>
+            <li>The platform holds the crypto in escrow until the trade is completed.</li>
+            <li>Once payment is confirmed, the crypto is released.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Why people use it</h3>
+          <ul>
+            <li>Flexible payment methods like bank transfer or Wise.</li>
+            <li>Better control over pricing and trade limits.</li>
+            <li>Useful for people who prefer direct trading with clear terms.</li>
+            <li>A practical way to learn crypto usage beyond just holding coins.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel section">
+      <h2>How to start as a beginner</h2>
+      <p class="sub">
+        The best approach is to start small, stay patient, and follow the process carefully.
+        Most beginner mistakes happen when people rush or ignore basic safety rules.
+      </p>
+      <div class="steps">
+        <div class="card">
+          <div class="step-number">1</div>
+          <h3>Create your account</h3>
+          <p>Use the referral link below to open your account and complete identity verification.</p>
+          <p><a class="btn btn-primary" href="https://noones.com/r/Naianest_Trading" target="_blank" rel="noopener noreferrer">Create account</a></p>
+        </div>
+        <div class="card">
+          <div class="step-number">2</div>
+          <h3>Secure your account</h3>
+          <p>Enable 2FA, use a strong password, and keep your login details private.</p>
+          <ul>
+            <li>Do not share codes.</li>
+            <li>Use your real details.</li>
+            <li>Keep your device secure.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="step-number">3</div>
+          <h3>Choose a payment method</h3>
+          <p>Use payment methods you control personally, such as your bank account or Wise.</p>
+          <ul>
+            <li>Use accounts in your own name.</li>
+            <li>Avoid third-party senders.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="step-number">4</div>
+          <h3>Start with small trades</h3>
+          <p>Do not rush into large amounts. Small trades help you learn the process with less risk.</p>
+          <ul>
+            <li>Read offer terms carefully.</li>
+            <li>Keep records if needed.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="step-number">5</div>
+          <h3>Confirm payment properly</h3>
+          <p>Only act after you confirm the money is actually in your account.</p>
+          <ul>
+            <li>Do not trust screenshots alone.</li>
+            <li>Check your account directly.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="step-number">6</div>
+          <h3>Build discipline</h3>
+          <p>Consistency matters more than rushing for fast profits.</p>
+          <ul>
+            <li>Protect capital first.</li>
+            <li>Learn from each trade.</li>
+            <li>Improve step by step.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel section">
+      <h2>Important safety rules</h2>
+      <p class="sub">
+        These are the habits that help you avoid common problems in P2P trading.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>Do this</h3>
+          <ul>
+            <li>Use your own verified payment account.</li>
+            <li>Read the offer terms before opening a trade.</li>
+            <li>Stay calm and communicate clearly.</li>
+            <li>Double-check names and payment details.</li>
+            <li>Start with low amounts while learning.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Avoid this</h3>
+          <ul>
+            <li>Releasing crypto before confirming payment.</li>
+            <li>Accepting third-party payments.</li>
+            <li>Rushing because someone pressures you.</li>
+            <li>Ignoring the platform’s safety process.</li>
+            <li>Trading amounts you cannot afford to risk.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel section">
+      <h2>Why follow Nairanest Trading?</h2>
+      <p class="sub">
+        Nairanest Trading is focused on helping beginners understand P2P trading in a simple and practical way.
+        The goal is to make the process easier to understand, safer to start, and clearer for people who want to build confidence gradually.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>What you get</h3>
+          <ul>
+            <li>Beginner-friendly explanations</li>
+            <li>Simple safety guidance</li>
+            <li>Clear next steps to get started</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Join the community</h3>
+          <p>Get updates, tips, and more beginner-friendly content through the Telegram channel.</p>
+          <p><a class="btn btn-secondary" href="https://t.me/NairanestTrading" target="_blank" rel="noopener noreferrer">Join Telegram</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel section cta">
+      <h2>Ready to start?</h2>
+      <p>
+        Use the referral link below to create your account and take your first step into P2P trading.
+      </p>
+      <div class="actions" style="justify-content:center;">
+        <a class="btn btn-primary" href="https://noones.com/r/Naianest_Trading" target="_blank" rel="noopener noreferrer">Start with my referral link</a>
+        <a class="btn btn-secondary" href="https://t.me/NairanestTrading" target="_blank" rel="noopener noreferrer">Follow on Telegram</a>
+      </div>
+    </section>
+
+    <div class="footer">© Nairanest Trading</div>
+  </div>
+</body>
+</html>
