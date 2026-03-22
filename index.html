@@ -10,19 +10,20 @@
   />
   <style>
     :root {
-      --bg: #f4f7fb;
-      --surface: #ffffff;
-      --surface-2: #eef3f9;
+      --bg: #f6f8fc;
+      --surface: rgba(255, 255, 255, 0.94);
+      --surface-strong: #ffffff;
+      --surface-soft: #eef4fb;
       --text: #122033;
-      --muted: #5c6b80;
-      --line: #d8e2ef;
+      --muted: #5f6f85;
+      --line: #dbe5f0;
       --primary: #0f766e;
       --primary-dark: #0b5e58;
-      --secondary: #1d4ed8;
+      --secondary: #2563eb;
       --accent: #16a34a;
       --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
       --radius: 20px;
-      --max: 1140px;
+      --max-width: 1140px;
     }
 
     * {
@@ -36,11 +37,11 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background:
-        linear-gradient(rgba(244, 247, 251, 0.9), rgba(244, 247, 251, 0.96)),
-        url("bg.jpg") center/cover fixed no-repeat;
       color: var(--text);
       line-height: 1.65;
+      background:
+        linear-gradient(rgba(246, 248, 252, 0.9), rgba(246, 248, 252, 0.96)),
+        url("bg.jpg") center/cover fixed no-repeat;
     }
 
     a {
@@ -49,26 +50,26 @@
     }
 
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
 
     .container {
-      width: min(var(--max), calc(100% - 32px));
+      width: min(var(--max-width), calc(100% - 32px));
       margin: 0 auto;
     }
 
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(10px);
-      background: rgba(244, 247, 251, 0.88);
-      border-bottom: 1px solid rgba(216, 226, 239, 0.8);
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(246, 248, 252, 0.88);
+      border-bottom: 1px solid rgba(219, 229, 240, 0.9);
     }
 
     .topbar-inner {
-      width: min(var(--max), calc(100% - 32px));
+      width: min(var(--max-width), calc(100% - 32px));
       margin: 0 auto;
       padding: 14px 0;
       display: flex;
@@ -81,13 +82,14 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      min-width: 0;
     }
 
     .brand img {
       width: 54px;
       height: 54px;
-      object-fit: cover;
       border-radius: 14px;
+      object-fit: cover;
       border: 1px solid var(--line);
       background: #fff;
       box-shadow: var(--shadow);
@@ -111,6 +113,7 @@
     .nav {
       display: flex;
       flex-wrap: wrap;
+      justify-content: flex-end;
       gap: 10px;
     }
 
@@ -119,8 +122,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 12px;
       padding: 12px 18px;
+      border-radius: 12px;
       font-weight: 700;
       transition: 0.2s ease;
       border: 1px solid transparent;
@@ -134,13 +137,13 @@
     }
 
     .nav .link {
-      color: var(--text);
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.92);
       border-color: var(--line);
+      color: var(--text);
     }
 
     .hero {
-      padding: 56px 0 26px;
+      padding: 56px 0 28px;
     }
 
     .hero-grid {
@@ -151,7 +154,7 @@
     }
 
     .panel {
-      background: rgba(255, 255, 255, 0.92);
+      background: var(--surface);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -187,7 +190,7 @@
     .lead {
       font-size: 18px;
       color: var(--muted);
-      max-width: 690px;
+      max-width: 700px;
       margin-bottom: 22px;
     }
 
@@ -199,7 +202,7 @@
     }
 
     .point {
-      background: var(--surface-2);
+      background: var(--surface-soft);
       border: 1px solid var(--line);
       border-radius: 16px;
       padding: 16px;
@@ -221,7 +224,7 @@
 
     .btn-primary {
       background: var(--primary);
-      color: white;
+      color: #ffffff;
     }
 
     .btn-primary:hover {
@@ -229,9 +232,9 @@
     }
 
     .btn-secondary {
-      background: white;
-      border: 1px solid var(--line);
+      background: var(--surface-strong);
       color: var(--text);
+      border: 1px solid var(--line);
     }
 
     .hero-side {
@@ -244,17 +247,17 @@
     .hero-side img {
       width: 100%;
       max-width: 250px;
-      aspect-ratio: 1/1;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
       border-radius: 22px;
       margin: 0 auto 20px;
       border: 1px solid var(--line);
-      background: white;
+      background: #fff;
       box-shadow: var(--shadow);
     }
 
     .info-box {
-      background: var(--surface-2);
+      background: var(--surface-soft);
       border: 1px solid var(--line);
       border-radius: 16px;
       padding: 16px;
@@ -281,7 +284,7 @@
     .sub {
       color: var(--muted);
       font-size: 17px;
-      max-width: 760px;
+      max-width: 780px;
     }
 
     .course-grid,
@@ -305,7 +308,7 @@
 
     .card,
     .step {
-      background: rgba(255, 255, 255, 0.94);
+      background: rgba(255, 255, 255, 0.96);
       border: 1px solid var(--line);
       border-radius: 18px;
       box-shadow: var(--shadow);
@@ -318,8 +321,8 @@
 
     .course-card {
       display: block;
-      padding: 22px;
       height: 100%;
+      padding: 22px;
     }
 
     .course-card small {
@@ -374,6 +377,22 @@
       padding: 20px;
     }
 
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .social-card {
+      text-align: center;
+      padding: 22px;
+    }
+
+    .social-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
     .cta {
       text-align: center;
       padding-bottom: 40px;
@@ -391,10 +410,24 @@
     }
 
     .footer {
-      padding: 16px 0 34px;
+      padding: 18px 0 34px;
       text-align: center;
       color: var(--muted);
       font-size: 14px;
+    }
+
+    .footer-links {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 14px;
+    }
+
+    @media (max-width: 1100px) {
+      .social-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 980px) {
@@ -411,10 +444,18 @@
         align-items: flex-start;
       }
 
+      .nav {
+        justify-content: flex-start;
+      }
+
       .hero-copy,
       .hero-side,
       .cta-box {
         padding: 24px;
+      }
+
+      .social-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -433,6 +474,10 @@
       <nav class="nav">
         <a class="link" href="#course">Course</a>
         <a class="link" href="#lesson3">How to Start</a>
+        <a class="link" href="https://www.facebook.com/NairanestTrading" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a class="link" href="https://www.instagram.com/nairanest_trading" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="link" href="https://www.tiktok.com/@nairanesttrading" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a class="link" href="https://x.com/NairanestP2P" target="_blank" rel="noopener noreferrer">X</a>
         <a class="link" href="https://t.me/NairanestTrading" target="_blank" rel="noopener noreferrer">Telegram</a>
       </nav>
     </div>
@@ -456,7 +501,7 @@
             </div>
             <div class="point">
               <strong>Safety first</strong>
-              Learn the habits that help reduce mistakes.
+              Learn the habits that help reduce beginner mistakes.
             </div>
             <div class="point">
               <strong>Built for beginners</strong>
@@ -480,7 +525,7 @@
 
           <div class="info-box">
             <strong>Main focus</strong>
-            Clarity, structure, discipline, and safe beginner learning.
+            Clarity, structure, discipline, and safer beginner learning.
           </div>
 
           <div class="info-box">
@@ -692,6 +737,57 @@
 
     <section class="section">
       <div class="section-head">
+        <h2>Connect With Nairanest Trading</h2>
+        <p class="sub">
+          Follow all platforms for updates, short tips, beginner support, and trading content.
+        </p>
+      </div>
+
+      <div class="social-grid">
+        <div class="card social-card">
+          <h3>Facebook</h3>
+          <p>Follow updates and community content.</p>
+          <p style="margin-top: 14px;">
+            <a class="btn btn-secondary" href="https://www.facebook.com/NairanestTrading" target="_blank" rel="noopener noreferrer">Follow Facebook</a>
+          </p>
+        </div>
+
+        <div class="card social-card">
+          <h3>Instagram</h3>
+          <p>See brand updates and visual posts.</p>
+          <p style="margin-top: 14px;">
+            <a class="btn btn-secondary" href="https://www.instagram.com/nairanest_trading" target="_blank" rel="noopener noreferrer">Follow Instagram</a>
+          </p>
+        </div>
+
+        <div class="card social-card">
+          <h3>TikTok</h3>
+          <p>Watch beginner-friendly short videos.</p>
+          <p style="margin-top: 14px;">
+            <a class="btn btn-secondary" href="https://www.tiktok.com/@nairanesttrading" target="_blank" rel="noopener noreferrer">Follow TikTok</a>
+          </p>
+        </div>
+
+        <div class="card social-card">
+          <h3>X</h3>
+          <p>Get quick updates and insights.</p>
+          <p style="margin-top: 14px;">
+            <a class="btn btn-secondary" href="https://x.com/NairanestP2P" target="_blank" rel="noopener noreferrer">Follow X</a>
+          </p>
+        </div>
+
+        <div class="card social-card">
+          <h3>Telegram</h3>
+          <p>Join for support and direct guidance.</p>
+          <p style="margin-top: 14px;">
+            <a class="btn btn-secondary" href="https://t.me/NairanestTrading" target="_blank" rel="noopener noreferrer">Join Telegram</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
         <h2>Why Follow Nairanest Trading?</h2>
         <p class="sub">
           Nairanest Trading focuses on helping beginners understand P2P trading with clear lessons,
@@ -706,17 +802,17 @@
             <li>Beginner-friendly explanations</li>
             <li>Clear step-by-step structure</li>
             <li>Simple safety guidance</li>
-            <li>Support through Telegram</li>
+            <li>Support through Telegram and social platforms</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Join the community</h3>
-          <p>Need help? Join the Telegram community for beginner support and updates.</p>
+          <h3>Need help?</h3>
+          <p>
+            Join the Telegram community for beginner support and updates, then follow the guide at your own pace.
+          </p>
           <p style="margin-top: 14px;">
-            <a class="btn btn-secondary" href="https://t.me/NairanestTrading" target="_blank" rel="noopener noreferrer">
-              Join Telegram
-            </a>
+            <a class="btn btn-secondary" href="https://t.me/NairanestTrading" target="_blank" rel="noopener noreferrer">Join Telegram Support</a>
           </p>
         </div>
       </div>
@@ -742,7 +838,14 @@
     </section>
 
     <footer class="footer">
-      © 2026 Nairanest Trading. All rights reserved.
+      <div>© 2026 Nairanest Trading. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="https://www.facebook.com/NairanestTrading" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.instagram.com/nairanest_trading" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@nairanesttrading" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a href="https://x.com/NairanestP2P" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://t.me/NairanestTrading" target="_blank" rel="noopener noreferrer">Telegram</a>
+      </div>
     </footer>
   </main>
 </body>
