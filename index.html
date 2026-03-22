@@ -64,13 +64,12 @@
       gap: 16px;
       margin-bottom: 22px;
     }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-      color: var(--text);
+    .panel {
+  background: rgba(16, 26, 47, 0.78);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
     }
 
     .brand img {
@@ -120,7 +119,9 @@
 
     .nav-btn:hover,
     .btn:hover,
-    .card:hover,
+    .card:hover {
+  transform: translateY(-4px);
+  transition: 0.2s ease;
     .lesson-card:hover {
       transform: translateY(-2px);
     }
@@ -207,11 +208,12 @@
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--primary));
-      color: #062315;
-      border-color: transparent;
-    }
+   .btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  color: #062315;
+  border-color: transparent;
+  box-shadow: 0 0 15px rgba(34,197,94,0.4);
+}
 
     .btn-secondary {
       background: rgba(17, 29, 53, 0.88);
